@@ -1,5 +1,4 @@
 package com.ragh.sportsProject.layers.domain;
-
 import java.util.Objects;
 
 public class Sport {
@@ -9,6 +8,9 @@ public class Sport {
     private String sportPlace;
     private boolean equipmentNeeded;
     private boolean individualOrTeam;
+
+    public Sport() {
+    }
 
     public Sport(String sportName, Integer athletesNum, Double sportTime, String sportPlace, boolean equipmentNeeded, boolean individualOrTeam) {
         this.sportName = sportName;
@@ -78,5 +80,17 @@ public class Sport {
     @Override
     public int hashCode() {
         return Objects.hash(sportName, athletesNum, sportTime, sportPlace, equipmentNeeded, individualOrTeam);
+    }
+
+    @Override
+    public String toString() {
+        return "Sport{" +
+                "sportName='" + sportName + '\'' +
+                ", athletesNum=" + athletesNum +
+                ", sportTime=" + sportTime +
+                ", sportPlace='" + sportPlace + '\'' +
+                ", equipmentNeeded=" + equipmentNeeded +
+                ", individualOrTeam=" + individualOrTeam +
+                '}';
     }
 }
