@@ -1,7 +1,15 @@
 package com.ragh.sportsProject.layers.domain;
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name ="sports")
 public class Sport {
+
+
+    @Id
+    @GeneratedValue( generator = "sports_sport_id_seq")
+    private Long sport_id;
     private String sportName;
     private Integer athletesNum;
     private Double sportTime;
@@ -53,6 +61,14 @@ public class Sport {
         this.sportPlace = sportPlace;
     }
 
+    public Long getSport_id() {
+        return sport_id;
+    }
+
+    public void setSport_id(Long sport_id) {
+        this.sport_id = sport_id;
+    }
+
     public boolean isEquipmentNeeded() {
         return equipmentNeeded;
     }
@@ -60,6 +76,7 @@ public class Sport {
     public void setEquipmentNeeded(boolean equipmentNeeded) {
         this.equipmentNeeded = equipmentNeeded;
     }
+
 
     public boolean isIndividualOrTeam() {
         return individualOrTeam;
